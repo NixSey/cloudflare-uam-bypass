@@ -27,7 +27,8 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        apt install selenium
+        chmod 777 installChrome.sh
+        ./installChrome.sh
         python -m pip install --upgrade pip
         pip install requests pysocks socks colored undetected_chromedriver
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
